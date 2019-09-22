@@ -1,3 +1,6 @@
+# MacOS Finder Crap:
+.DS_Store
+
 # Logs
 logs
 *.log
