@@ -9,7 +9,7 @@ after_success:
   - docker build -t mattgleich/fib-calc-client ./client
   - docker build -t mattgleich/fib-calc-ngnix ./nginx
   - docker build -t mattgleich/fib-calc-server ./server
-  - docker build -t mattgleich/fib-calc-worker ./ worker
+  - docker build -t mattgleich/fib-calc-worker ./worker
   # Log into docker CLI
   - echo "$docker_password" | docker login -u "$docker_id" --password-stdin
   # Take those images and push them to docker hub
