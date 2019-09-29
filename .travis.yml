@@ -1,0 +1,19 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t mattgleich/react-test -f ./client/dev.Dockerfile ./client
+script:
+  - docker run mattgleich/react-test npm test -- --coverage
+after_success:
+  - docker build -t mattgleich/fib-calc-client ./client
+  - docker build -t mattgleich/fib-calc-ngnix ./nginx
+  - docker build -t mattgleich/fib-calc-server ./server
+  - docker build -t mattgleich/fib-calc-worker ./worker
+  # Log into docker CLI
+  - echo "$docker_password" | docker login -u "$docker_id" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push mattgleich/fib-calc-client
+  - docker push mattgleich/fib-calc-ngnix
+  - docker push mattgleich/fib-calc-server
+  - docker push mattgleich/fib-calc-worker
