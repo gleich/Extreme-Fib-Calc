@@ -1,5 +1,7 @@
 # Extreme-Fib-Calc
 
+[![Build Status](https://travis-ci.com/Matt-Gleich/Extreme-Fib-Calc.svg?branch=master)](https://travis-ci.com/Matt-Gleich/Extreme-Fib-Calc)
+
 This is part of a Udemy course I am doing for Docker and K8s. This application is 100% overkill for a Fibonacci calculator, it is more to understand docker container interaction.
 
 ## Running Application
