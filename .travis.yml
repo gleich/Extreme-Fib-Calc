@@ -4,7 +4,7 @@ services:
 before_install:
   - docker build -t mattgleich/react-test -f ./client/dev.Dockerfile ./client
 script:
-  - docker run mattgleich/react-test npm test -- -- coverage
+  - docker run mattgleich/react-test npm test -- --coverage
 after_success:
   - docker build -t mattgleich/fib-calc-client ./client
   - docker build -t mattgleich/fib-calc-ngnix ./nginx
